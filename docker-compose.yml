@@ -15,6 +15,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_LOCAL_INFILE: 1
       FILE_NAME: ${FILE_NAME}
+      SELECTED_COLUMNS: ${SELECTED_COLUMNS}
     networks:
       - spark-network
     healthcheck:
@@ -91,8 +92,8 @@ services:
       --input_table products
       --output_table predicts
       -o /app/data/cluster_results
-      --max_missing 0.3
-      --min_unique 0.001
+      --max_missing 0.5
+      --min_unique 0.0001
       -v"
 
 
